@@ -23,24 +23,31 @@ class Connection
     }
 
     /**
-     * @return \Doctrine\DBAL\Driver\PDOConnection
+     * @param bool $useDbal
+     * @return \Doctrine\DBAL\Connection|\Doctrine\DBAL\Driver\PDOConnection
      * @throws \SMS\Core\Exception\InvalidDatabaseAdapterException
      */
-    public function connect()
+    public function connect($useDbal = true)
     {
         $conf = $this->getConfiguration();
         /** @var AbstractAdapter $conn */
         $conn = StaticFactory::get($conf->get('adapter'));
 
-        return $conn->connect(
-            $conf->get('adapter'),
-            $conf->get('host'),
-            $conf->get('dbname'),
-            $conf->get('port'),
-            $conf->get('user'),
-            $conf->get('password'),
-            $conf->get('options')
-        );
+        if ($useDbal) {
+            $connInstance = $conn->dbalConnect($conf->getAll());
+        } else {
+            $connInstance = $conn->connect(
+                $conf->get('adapter'),
+                $conf->get('host'),
+                $conf->get('dbname'),
+                $conf->get('port'),
+                $conf->get('user'),
+                $conf->get('password'),
+                $conf->get('options')
+            );
+        }
+
+        return $connInstance;
     }
 
     /**

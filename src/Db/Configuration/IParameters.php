@@ -15,6 +15,11 @@ interface IParameters
     public function get($key);
 
     /**
+     * @return array
+     */
+    public function getAll();
+
+    /**
      * @param $key
      * @param $value
      * @return mixed

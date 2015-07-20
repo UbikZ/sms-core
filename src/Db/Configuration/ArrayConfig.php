@@ -19,6 +19,14 @@ class ArrayConfig extends AbstractConfig implements IParameters
     }
 
     /**
+     * @return mixed
+     */
+    public function getAll()
+    {
+        return $this->getStorage();
+    }
+
+    /**
      * @param $key
      * @param $value
      * @return $this
