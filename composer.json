@@ -5,7 +5,12 @@
   "homepage": "http://github.com/ubikz",
   "license":"MIT",
   "version":"0.0.1-dev",
-  "authors":[],
+  "authors":[
+    {
+      "name": "UbikZ",
+      "homepage": "https://github.com/ubikz/sms-core/graphs/contributors"
+    }
+  ],
   "require":{
     "php":">=5.4",
     "igorw/config-service-provider": "v1.2.2",
