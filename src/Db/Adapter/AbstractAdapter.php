@@ -5,8 +5,7 @@ namespace SMS\Core\Db\Adapter;
 use Doctrine\DBAL\Driver\PDOConnection;
 
 /**
- * Class DbAbstract
- * @package Ubikz\SMS\Db\Adapter
+ * Class AbstractAdapter
  */
 abstract class AbstractAdapter
 {

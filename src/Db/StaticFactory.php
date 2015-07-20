@@ -6,7 +6,6 @@ use SMS\Core\Exception\InvalidDatabaseAdapterException;
 
 /**
  * Class StaticFactory
- * @package Ubikz\SMS\Db
  */
 class StaticFactory
 {

@@ -3,8 +3,7 @@
 namespace SMS\Core\Db\Adapter;
 
 /**
- * Class Pdo
- * @package Ubikz\SMS\Db\Adapter
+ * Class Mysql
  */
 class Mysql extends AbstractAdapter
 {

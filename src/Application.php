@@ -20,7 +20,6 @@ use SMS\Core\Silex\Layout as SilexLayout;
 
 /**
  * Class Application
- * @package Ubikz\SMS
  */
 class Application
 {

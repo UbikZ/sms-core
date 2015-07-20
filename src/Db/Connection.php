@@ -3,8 +3,7 @@
 namespace SMS\Core\Db;
 
 use SMS\Core\Db\Configuration\IParameters;
-use SMS\Core\Db\StaticFactory;
-use Ubikz\SMS\Db\Adapter\AbstractAdapter;
+use SMS\Core\Db\Adapter\AbstractAdapter;
 
 /**
  * Class Connection
