@@ -2,9 +2,9 @@
 
 namespace SMS\Core\Silex;
 
-use Doctrine\DBAL\Driver\PDOConnection;
 use Monolog\Logger;
 use Silex\Application;
+use SMS\Core\Db\Connection;
 
 /**
  * Class Layout.
@@ -98,7 +98,7 @@ class Layout
     }
 
     /**
-     * @return PDOConnection
+     * @return Connection
      */
     public static function database()
     {
