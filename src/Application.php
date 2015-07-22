@@ -63,7 +63,7 @@ class Application
     /**
      * We'll check application integrity (extensions loaded etc.)
      */
-    private function checkIntegrity()
+    protected function checkIntegrity()
     {
         // We need to check if pdo_mysql is enabled (no adapter for now so we have to do this)
         if (!extension_loaded('pdo_mysql')) {
@@ -74,7 +74,7 @@ class Application
     /***
      * Turn fatal errors into exception.
      */
-    private function registerErrorHandler()
+    protected function registerErrorHandler()
     {
         ErrorHandler::register();
         ExceptionHandler::register($this->debug);
@@ -83,7 +83,7 @@ class Application
     /**
      * @throws InvalidFileException
      */
-    private function registerConfiguration()
+    protected function registerConfiguration()
     {
         // We get configuration file
         if (!file_exists($confFile = CONF_PATH.'/config.yml')) {
@@ -119,7 +119,7 @@ class Application
     /**
      * @throws InvalidConfigurationException
      */
-    private function registerDatabase()
+    protected function registerDatabase()
     {
         if (!isset($this->conf['database'])) {
             throw new InvalidConfigurationException('Configuration for `database` does not exist');
@@ -131,7 +131,7 @@ class Application
     /**
      * @throws InvalidConfigurationException
      */
-    private function registerMailer()
+    protected function registerMailer()
     {
         if (!isset($this->conf['mailer'])) {
             throw new InvalidConfigurationException('Configuration for `mailer` does not exist');
@@ -153,7 +153,7 @@ class Application
     /**
      * @throws InvalidConfigurationException
      */
-    private function registerTemplateEngine()
+    protected function registerTemplateEngine()
     {
         $confApp = $this->conf['application'];
         if (!isset($confApp['template'])) {
@@ -210,7 +210,7 @@ class Application
     /**
      *
      */
-    private function registerRoutes()
+    protected function registerRoutes()
     {
         $confApp = $this->conf['application'];
         $modules = isset($confApp['modules']) && is_array($confApp['modules']) ? $confApp['modules'] : [];
@@ -242,7 +242,7 @@ class Application
      *
      * @throws InvalidConfigurationException
      */
-    public function registerLogger()
+    protected function registerLogger()
     {
         $confApp = $this->conf['application'];
         $modules = isset($confApp['modules']) && is_array($confApp['modules']) ? $confApp['modules'] : [];
@@ -284,7 +284,7 @@ class Application
      * @param $e \Exception
      * @param null|string $channel
      */
-    private function handleException($e, $channel = null)
+    protected function handleException($e, $channel = null)
     {
         if ($this->debug) {
             dump($e);
