@@ -8,7 +8,7 @@ use Monolog\Logger;
 use Silex\Provider\MonologServiceProvider;
 use Silex\Provider\SwiftmailerServiceProvider;
 use Silex\Provider\TwigServiceProvider;
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
+use SMS\Core\Exception\InvalidConfigurationException;
 use Symfony\Component\Debug\ErrorHandler;
 use Symfony\Component\Debug\ExceptionHandler;
 use SMS\Core\Db\Configuration\ArrayConfig;
